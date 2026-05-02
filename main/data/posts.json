@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Django bilan boshlash",
+        "content": "Django juda kuchli web framework...",
+        "date": "2026-01-01"
+    },
+    {
+        "id": 2,
+        "title": "Python maslahatlar",
+        "content": "Python’da clean code yozish uchun...",
+        "date": "2026-01-05"
+    }
+]

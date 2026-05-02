@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% if post %}
+
+    <h1>{{ post.title }}</h1>
+
+    <p>{{ post.content }}</p>
+
+    <small>{{ post.date }}</small>
+
+{% else %}
+
+    <h1>Post topilmadi</h1>
+
+{% endif %}
+
+<br><br>
+
+<a href="{% url 'blog' %}">← Back to blog</a>
+
+{% endblock %}

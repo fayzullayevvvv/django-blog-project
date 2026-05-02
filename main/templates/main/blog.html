@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<h1>Blog</h1>
+
+{% for post in posts %}
+    <div style="margin-bottom: 30px;">
+        
+        <!-- TITLE (clickable) -->
+        <h2>
+            <a href="{% url 'post_detail' post.id %}">
+                {{ post.title }}
+            </a>
+        </h2>
+
+        <!-- SHORT CONTENT -->
+        <p>{{ post.content }}</p>
+
+        <!-- DATE -->
+        <small>{{ post.date }}</small>
+
+    </div>
+{% endfor %}
+
+{% endblock %}
