@@ -2,23 +2,46 @@
 
 {% block content %}
 
-<div class="hero">
-    <h1>
-        Building elegant solutions with Python & Django
-    </h1>
+<section class="hero">
+    <div class="container hero__container">
 
-    <p>
-        Full Stack Developer | Python Enthusiast | Problem Solver
-    </p>
+        <div class="hero__content">
 
-    <p>
-        I'm a backend developer passionate about creating scalable web applications.
-    </p>
+            <!-- TAG -->
+            <p class="hero__tag">
+                Backend Developer • Python
+            </p>
 
-    <div class="buttons">
-        <button class="btn btn-primary">Read my blog</button>
-        <button class="btn btn-secondary">Get in touch</button>
+            <!-- TITLE -->
+            <h1 class="hero__title">
+                Building Clean & Scalable Backend Systems
+            </h1>
+
+            <!-- DESCRIPTION -->
+            <p class="hero__desc">
+                I'm <strong>Ozodbek Fayzullayev</strong>, a 16-year-old backend developer from Samarkand.
+                Passionate about programming and problem solving, I focus on building reliable, high-performance
+                backend systems using modern technologies.
+                <br><br>
+                I specialize in <strong>Python, FastAPI, Django, and PostgreSQL</strong>, with a strong interest in
+                clean architecture, scalability, and efficient API design. My goal is to become a top-tier software engineer
+                and contribute to impactful, real-world projects.
+            </p>
+
+            <!-- BUTTONS -->
+            <div class="hero__actions">
+                <a href="{% url 'blog' %}" class="btn btn--primary">
+                    View Blog
+                </a>
+
+                <a href="{% url 'contact' %}" class="btn btn--secondary">
+                    Contact Me
+                </a>
+            </div>
+
+        </div>
+
     </div>
-</div>
+</section>
 
 {% endblock %}

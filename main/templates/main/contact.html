@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<section class="section contact-section">
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="section__header section__header--center">
+            <h1 class="page-title">Contact</h1>
+            <p class="section__desc">
+                Feel free to reach out for collaboration or just a friendly chat.
+            </p>
+        </div>
+
+        <!-- CONTACT WRAPPER -->
+        <div class="contact">
+
+            <!-- FORM -->
+            <form method="POST" class="form">
+                {% csrf_token %}
+
+                <div class="form__group">
+                    <input type="text" name="name" placeholder="Name" required>
+                </div>
+
+                <div class="form__group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="form__group">
+                    <textarea name="message" placeholder="Message" required></textarea>
+                </div>
+
+                <button class="btn btn--primary form__btn">
+                    Send Message
+                </button>
+
+            </form>
+
+            <!-- CONTACT ALT -->
+            <div class="contact-alt">
+
+                <p class="contact-alt__title">
+                    Other ways to contact
+                </p>
+
+                <div class="contact-alt__list">
+
+                    <a href="https://t.me/fayzullayev_20" target="_blank" class="contact-alt__item">
+                        <span class="contact-alt__icon">📩</span>
+                        <span>Telegram</span>
+                    </a>
+
+                    <a href="https://github.com/fayzullayevvvv" target="_blank" class="contact-alt__item">
+                        <span class="contact-alt__icon">💻</span>
+                        <span>GitHub</span>
+                    </a>
+
+                    <a href="mailto:ozodbekfayzullayev1220@gmail.com" class="contact-alt__item">
+                        <span class="contact-alt__icon">✉️</span>
+                        <span>Gmail</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

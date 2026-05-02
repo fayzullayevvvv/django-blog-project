@@ -2,22 +2,72 @@
 
 {% block content %}
 
-{% if post %}
+<section class="article-section">
+    <div class="container">
 
-    <h1>{{ post.title }}</h1>
+        {% if post %}
 
-    <p>{{ post.content }}</p>
+        <article class="article">
 
-    <small>{{ post.date }}</small>
+            <!-- HEADER -->
+            <header class="article__header">
 
-{% else %}
+                <h1 class="article__title">
+                    {{ post.title }}
+                </h1>
 
-    <h1>Post topilmadi</h1>
+                <div class="article__meta">
+                    <span class="article__author">
+                        Ozodbek Fayzullayev
+                    </span>
 
-{% endif %}
+                    <span class="article__dot"></span>
 
-<br><br>
+                    <time class="article__date">
+                        {{ post.date }}
+                    </time>
+                </div>
 
-<a href="{% url 'blog' %}">← Back to blog</a>
+            </header>
+
+            <!-- CONTENT -->
+            <div class="article__content">
+                {{ post.content|linebreaks }}
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="article__footer">
+
+                <a href="{% url 'blog' %}" class="back-link">
+                    ← Back to blog
+                </a>
+
+            </footer>
+
+        </article>
+
+        {% else %}
+
+        <!-- EMPTY STATE -->
+        <div class="empty">
+
+            <h1 class="empty__title">
+                Post not found
+            </h1>
+
+            <p class="empty__desc">
+                The article you're looking for doesn’t exist or was removed.
+            </p>
+
+            <a href="{% url 'blog' %}" class="btn btn--secondary">
+                Go back to blog
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+</section>
 
 {% endblock %}

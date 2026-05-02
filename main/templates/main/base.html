@@ -2,31 +2,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+<title>{% block title %}Ozodbek Fayzullayev{% endblock %}</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="{% static 'main/style.css' %}">
+
 </head>
+
 <body>
 
-<div class="container">
+<!-- =========================================
+     HEADER
+========================================= -->
+<header class="header">
+    <div class="container header__inner">
 
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <div><strong>JD</strong></div>
+        <!-- LOGO -->
+        <a href="/" class="logo">
+            Ozodbek Fayzullayev
+        </a>
 
-        <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/blog/">Blog</a>
-            <a href="#">Contact</a>
-        </div>
+        <!-- NAVIGATION -->
+        <nav class="nav" aria-label="Main navigation">
+            <ul class="nav__list">
+
+                <li>
+                    <a href="/" class="nav__link">Home</a>
+                </li>
+
+                <li>
+                    <a href="/blog/" class="nav__link">Blog</a>
+                </li>
+
+                <li>
+                    <a href="/contact/" class="nav__link">Contact</a>
+                </li>
+
+            </ul>
+        </nav>
+
     </div>
+</header>
 
-    <!-- CONTENT -->
-    {% block content %}
-    {% endblock %}
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+<main class="main">
+    <div class="main__inner">
+        {% block content %}{% endblock %}
+    </div>
+</main>
 
-</div>
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="footer">
+    <div class="container footer__inner">
+        <p class="footer__text">
+            © {% now "Y" %} Ozodbek Fayzullayev
+        </p>
+    </div>
+</footer>
 
 </body>
 </html>

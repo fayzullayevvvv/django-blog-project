@@ -2,25 +2,52 @@
 
 {% block content %}
 
-<h1>Blog</h1>
+<section class="section">
+    <div class="container">
 
-{% for post in posts %}
-    <div style="margin-bottom: 30px;">
-        
-        <!-- TITLE (clickable) -->
-        <h2>
-            <a href="{% url 'post_detail' post.id %}">
-                {{ post.title }}
+        <!-- HEADER -->
+        <div class="section__header">
+            <h1 class="page-title">Blog</h1>
+            <p class="section__desc">
+                Articles about backend development, Python, and system design.
+            </p>
+        </div>
+
+        <!-- POSTS GRID -->
+        <div class="grid blog__grid">
+
+            {% for post in posts %}
+            <a href="{% url 'post_detail' post.id %}" class="card card--link">
+
+                <!-- TITLE -->
+                <h2 class="card__title">
+                    {{ post.title }}
+                </h2>
+
+                <!-- DESCRIPTION -->
+                <p class="card__desc">
+                    {{ post.content|truncatewords:20 }}
+                </p>
+
+                <!-- FOOTER -->
+                <div class="card__footer">
+
+                    <span class="card__date">
+                        {{ post.date }}
+                    </span>
+
+                    <span class="card__read">
+                        Read →
+                    </span>
+
+                </div>
+
             </a>
-        </h2>
+            {% endfor %}
 
-        <!-- SHORT CONTENT -->
-        <p>{{ post.content }}</p>
-
-        <!-- DATE -->
-        <small>{{ post.date }}</small>
+        </div>
 
     </div>
-{% endfor %}
+</section>
 
 {% endblock %}
